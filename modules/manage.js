@@ -1,4 +1,4 @@
-import Store from './store';
+import Store from './store.js';
 
 const store = new Store();
 
@@ -21,7 +21,7 @@ export default class Manage {
 
   printScores = (item) => {
     document.getElementById(
-      'scores-list'
+      'scores-list',
     ).innerHTML += `<li>${item.name} : ${item.score}</li>`;
   };
 }
