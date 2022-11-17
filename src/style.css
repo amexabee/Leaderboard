@@ -1,0 +1,36 @@
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  padding: 20px 0;
+}
+
+.display {
+  width: 20%;
+  margin-right: 10%;
+}
+
+.title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+ul {
+  border: 1px solid black;
+  list-style: none;
+  padding: 0;
+}
+
+#scores-list > li:nth-child(even) {
+  background-color: #ddd;
+}
+
+.name,
+.score {
+  margin-bottom: 10px;
+}
