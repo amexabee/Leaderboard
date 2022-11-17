@@ -1,27 +1,25 @@
-import Store from './store.js';
-
-const store = new Store();
-
 export default class Manage {
-  add = (item) => {
-    store.list.push(item);
-    store.store();
-    this.printScores(item);
+  add = async (url, name, score) => {
+    await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({
+        user: name,
+        score,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
   };
 
-  removeAll = () => {
-    store.list.length = 0;
-    this.clear();
-    store.store();
-  };
-
-  clear = () => {
-    document.getElementById('scores-list').innerHTML = '';
-  };
-
-  printScores = (item) => {
-    document.getElementById(
-      'scores-list',
-    ).innerHTML += `<li>${item.name} : ${item.score}</li>`;
+  printScores = async (url) => {
+    const request = await fetch(url);
+    request.json().then((e) => {
+      e.result.forEach((element) => {
+        document.getElementById(
+          'scores-list',
+        ).innerHTML += `<li>${element.user} : ${element.score}</li>`;
+      });
+    });
   };
 }
