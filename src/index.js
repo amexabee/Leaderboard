@@ -2,7 +2,7 @@ import Manage from '../modules/manage.js';
 import './style.css';
 
 const manage = new Manage();
-const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${process.env.API_KEY1}/scores/`;
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/X1HZAkVXoHqrPVHomPEH/scores/';
 document.getElementById('btn').addEventListener('click', () => {
   const name = document.getElementById('name').value;
   const score = document.getElementById('score').value;
